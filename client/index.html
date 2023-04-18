@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.png" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding AI | JS + OpenAI</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="top-bar">
+        <header class="header">
+          <div class="logo-box">
+            <i class='bx bx-code-alt'></i>
+            <h4>Coding AI Chat</h4>
+          </div>
+          <button class="theme-toggle-btn">
+            <i class='bx bx-sun'></i>
+            <i class='bx bx-moon hide'></i>
+          </button>
+        </header>
+      </div>
+      <div id="chat_container"></div>
+
+      <form>
+        <textarea name="prompt" cols="1" rows="1" placeholder="Ask..."></textarea>
+        <button type="submit"><i class='bx bxs-send'></i></button>
+      </form>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+:root{
+  --primary-bg-color:#F5F5F5;
+  --secondary-bg-color:#eeeeee;
+  --text-color-primary:#333333;
+  --text-color-secondary:#555555;
+  --icon-bg-color: #949393;
+  --profile-bg-color-user:#FFD6D6;
+  --profile-bg-color-bot:#E1E6FF;
+  --logo-color:#4C6EF5;
+
+}
+
+html.dark{
+  --primary-bg-color: #333333;
+  --secondary-bg-color: #222222;
+  --text-color-primary: #FFFFFF;
+  --text-color-secondary: #CCCCCC;
+  --icon-bg-color: wheat;
+  --profile-bg-color-user: #A05353;
+  --profile-bg-color-bot: #8C9EBF;
+  --btn-color: #5E8FBF;
+  --logo-color: #CCA300;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Roboto", "Alegreya Sans", sans-serif;
+}
+
+body {
+  background: var(--primary-bg-color);
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  background: var(--primary-bg-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#chat_container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  max-width: 1280px;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  padding: 5px 0 0 0;
+  scroll-behavior: smooth;
+}
+
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 15px;
+}
+
+.ai {
+  background: var(--secondary-bg-color);
+}
+
+.chat {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+
+  background: var(--profile-bg-color-user);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai .profile {
+  background: var(--profile-bg-color-bot);
+}
+
+.profile img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.message {
+  flex: 1;
+
+  color: var(--text-color-primary);
+  font-size: 18px;
+
+  max-width: 100%;
+  overflow-x: scroll;
+
+  /*
+   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
+   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
+   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
+   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
+  */
+  white-space: pre-wrap; 
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+form {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px;
+  background: var(--secondary-bg-color);
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  /* border-top: 1px solid var(--logo-color); */
+  box-shadow: 0px 0px 0.15rem var(--logo-color);
+}
+
+textarea {
+  width: 100%;
+
+  color: var(--text-color-secondary);
+  font-size: 18px;
+  resize: none;
+
+  padding: 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+button i {
+  font-size: 1.6rem;
+  color: var(--logo-color);
+}
+button i:hover {
+  color: var(--text-color-secondary);
+}
+
+form img {
+  width: 30px;
+  height: 30px;
+}
+
+.chatIcon{
+  font-size: 1.6rem;
+  color: var(--icon-bg-color);
+}
+
+.bx-moon.hide,
+.bx-sun.hide {
+  display: none;
+}
+
+.header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 65px;
+  justify-content: space-between;
+}
+.logo-box{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header h4 {
+  color: var(--logo-color);
+}
+.bx-code-alt{
+  font-size: 2rem;
+}
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  /* border-bottom: 1px solid var(--logo-color); */
+  box-shadow: 1px 0 0.25rem var(--logo-color);
+}
+
+@media screen and (min-width:800px) {
+  .header{
+    height: 75px;
+    /* padding: 0 5rem; */
+    max-width: 1280px;
+  }
+  .header h4{
+    font-size: 1.5rem;
+  }
+    .bx-code-alt {
+      font-size: 3rem;
+    }
+}
+
+.header i {
+  color: var(--logo-color);
+}
